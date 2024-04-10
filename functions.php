@@ -151,7 +151,8 @@ remove_action( 'admin_init', 'genesis_add_taxonomy_archive_options' );
 add_theme_support(
     'genesis-menus', array(
         'primary'   => __( 'Primary Menu', 'anania-bailey' ),
-        'secondary'   => __( 'Mobile Menu', 'anania-bailey' )
+        'secondary'   => __( 'Practice Area Menu', 'anania-bailey' ),
+        'tertiary' =>__('Mobile Menu', 'anania-bailey')
     )
 );
 
@@ -215,10 +216,10 @@ remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
 
 // Apply Walker to Menu
 function anania_menu_args( $args ) {
-  if( 'primary' == $args['theme_location'] ) {
+  if( 'primary' == $args['theme_location'] || 'secondary' == $args['theme_location'] ) {
     $args['walker'] = new AB_Desktop_Walker();
   }
-  if( 'secondary' == $args['theme_location'] ) {
+  if( 'tertiary' == $args['theme_location'] ) {
     $args['walker'] = new AB_Mobile_Walker();
     $args['menu_class'] = 'menu genesis-nav-menu menu-mobile';
   }
@@ -230,9 +231,10 @@ add_filter( 'wp_nav_menu_args', 'anania_menu_args' );
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav' );
 
-// Repositions secondary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'anania_mobile_menu', 'genesis_do_subnav');
+function anania_mobile_output() {
+  wp_nav_menu(array('menu'=>'tertiary'));
+}
+add_action( 'anania_mobile_menu', 'anania_mobile_output');
 
 // Inset Mobile Menu Button
 function anania_mobile_toggle() { ?>

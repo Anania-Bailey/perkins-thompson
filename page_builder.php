@@ -3,7 +3,7 @@
 /****************************************************************
 
     Template Name: Page Builder
-    Template Post Type: post, page
+    Template Post Type: post, page, update, person, practice-area
 
 ****************************************************************/
 
