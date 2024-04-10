@@ -140,6 +140,14 @@ add_theme_support( 'block-template-parts' );
 // Remove category extras
 remove_action( 'admin_init', 'genesis_add_taxonomy_archive_options' );
 
+function anania_header_wrap() { ?>
+  <div class="header-wrap">
+<?php } add_action('genesis_before_header', 'anania_header_wrap');
+
+function anania_header_close() { ?>
+  </div>
+<?php } add_action('genesis_after_header', 'anania_header_close', 10);
+
 
 /****************************************************************
 
@@ -169,10 +177,6 @@ class AB_Desktop_Walker extends Walker_Nav_Menu {
  
     $output .= $item->title; 
     
-    if ($args->walker->has_children && $depth == 0) {
-      $output .= '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.385 10" class="down-icon"><path id="angle-down-shprfc-solid" d="M26.892,124.7l.9-.9,6.385-6.385.906-.906L33.277,114.7l-.9.9-5.483,5.483-5.483-5.479-.9-.906L18.7,116.508l.9.9,6.385,6.385Z" transform="translate(-18.7 -114.7)"/></svg>';
-    }
- 
     if ($item->url && $item->url != '#') {
       $output .= '</a>';
     } else {
@@ -232,7 +236,7 @@ remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav' );
 
 function anania_mobile_output() {
-  wp_nav_menu(array('menu'=>'tertiary'));
+  wp_nav_menu(array('theme_location'=>'tertiary'));
 }
 add_action( 'anania_mobile_menu', 'anania_mobile_output');
 

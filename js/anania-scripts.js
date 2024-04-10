@@ -47,18 +47,14 @@ jQuery(function($) {
     }
 
     function stickyHeader() {
-        var scrollHeight = $('.superheader').outerHeight();
-        var headerHeight = $('.site-header').outerHeight();
-        
-        if (scrollHeight == null) {
-            scrollHeight = 0;
-        }
-        
+        var scrollHeight = 0;
+        var headerHeight = $('.header-wrap').outerHeight();
+
         if ($(window).scrollTop() > scrollHeight) {
-            $('.site-header').addClass('site-header--sticky');
+            $('.header-wrap').addClass('header-wrap--sticky');
             $('.site-inner').css('margin-top', headerHeight);
         } else {
-            $('.site-header').removeClass('site-header--sticky');
+            $('.header-wrap').removeClass('header-wrap--sticky');
             $('.site-inner').css('margin-top', 0);
         }
 

@@ -9,6 +9,8 @@
    /* Header
     --------------------------------------------- */
     
+    .site-header
+    
    .menu-toggle,
    .mobile-nav {
       display: none;
@@ -18,7 +20,7 @@
    .menu-item .linkless {
       text-align: center;
       white-space: nowrap;
-      font-size: var(--wp--preset--font-size--medium);
+      font-size: var(--wp--preset--font-size--small);
       padding: 5px var(--wp--preset--spacing--20);
    }
    
@@ -33,13 +35,17 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      padding-left: var(--wp--preset--spacing--20);
 
       .wrap {
          width: auto;
          max-width: 100%;
          margin: 0 calc(-1 * var(--wp--preset--spacing--20)) 0 0;
       }
-
+   }
+   
+   .nav-primary,
+   .nav-secondary {
       .genesis-nav-menu {
          margin: 0;
          padding: 0;
@@ -48,12 +54,12 @@
          gap: 5px;
          align-items: center;
          justify-content: flex-end;
-
+      
          >li {
             position: relative;
             display: inline-block;
             margin-top: 3px;
-
+      
             &:after {
                content: '';
                display: block;
@@ -66,7 +72,7 @@
                background: var(--wp--preset--color--pt-blue);
                transition: all .3s ease-in-out;
             }
-
+      
             &:hover:after,
             &:focus-within:after {
                max-width: 100%;
@@ -81,29 +87,9 @@
                }
                
             }
-            
-            &.menu-item-has-children > a,
-            &.menu-item-has-children > .linkless {
-               display: flex;
-               align-items: center;
-               gap: 5px;
-               
-               svg {
-                  width: 10px;
-                  height: 6px;
-                  fill: var(--wp--preset--color--pt-blue);
-                  transition: all .3s ease-in-out;
-               }
-               
-               &:hover svg,
-               &:focus svg {
-                  fill: var(--wp--preset--color--pt-teal);
-               }
-               
-            }
-
+      
          }
-
+      
          .sub-menu {
             position: absolute;
             top: 100%;
@@ -112,11 +98,11 @@
             max-height: 0px;
             visibility: hidden;
             padding: 0;
-            background: var(--wp--preset--color--white);
+            background: var(--wp--preset--color--pt-blue);
             transition: all 0s ease-in-out;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, .15);
             z-index: 1000;
-
+      
             li {
                display: block;
                position: relative;
@@ -124,26 +110,25 @@
                opacity: 0;
                transition: all 0s ease-in-out;
             }
-
+      
             a,
             .linkless {
-               font-size: 90%;
                text-align: left;
                padding: 10px 20px 10px 10px;
-
+      
                &:hover,
                &:focus {
                   transform: translateX(5px);
                }
             }
-
+      
            .sub-menu {
               position: absolute;
               top: 0;
               left: 100%;
             }
          }
-
+      
          li:hover>.sub-menu,
          li:focus>.sub-menu,
          li:focus-within>.sub-menu {
@@ -159,7 +144,20 @@
             }
          }
       }
-
+   }
+   
+      
+   .nav-secondary {
+      position: relative;
+      display: block;
+      margin: 0;
+      background: rgba(17, 40, 76, 0.9);
+      padding: var(--wp--preset--spacing--20) 0;
+      
+      .genesis-nav-menu {
+         justify-content: space-between;
+         margin: 0 calc(-1 * var(--wp--preset--spacing--20));
+      }
    }
    
    /* Body

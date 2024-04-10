@@ -3,8 +3,8 @@
 
 @media (min-width: 600px) {
 
-    .admin-bar .site-header--sticky,
-    .admin-bar.fixed-scroll .site-header {
+    .admin-bar .header-wrap--sticky,
+    .admin-bar.fixed-scroll .header-wrap {
         top: var(--wp-admin--admin-bar--height) !important;
     }
 }
@@ -16,17 +16,6 @@
 
     /* Header
     --------------------------------------------- */
-    
-    .title-area {
-        flex-basis: 175px;
-    }
-    
-    .site-header--sticky,
-     .fixed--scroll .site-header {
-         .title-area {
-             flex-basis: 100px;
-         }
-    }
 
     /* Body
     --------------------------------------------- */
