@@ -1,0 +1,48 @@
+/* Small Tablet / Large Phone Styles
+---------------------------------------------------------------------------------------------------- */
+
+@media (min-width: 600px) {
+
+    .admin-bar .site-header--sticky,
+    .admin-bar.fixed-scroll .site-header {
+        top: var(--wp-admin--admin-bar--height) !important;
+    }
+}
+
+@media (min-width: 780px) {
+
+    /* Containers & General Styles
+    --------------------------------------------- */
+
+    /* Header
+    --------------------------------------------- */
+    
+    .title-area {
+        flex-basis: 175px;
+    }
+    
+    .site-header--sticky,
+     .fixed--scroll .site-header {
+         .title-area {
+             flex-basis: 100px;
+         }
+    }
+
+    /* Body
+    --------------------------------------------- */
+
+
+    /* Footer
+    --------------------------------------------- */
+
+    .site-credits .dev {
+        display: inline-block;
+
+        &:before {
+            content: '|';
+            display: inline-block;
+            margin: 0 5px 0 3px;
+        }
+    }
+
+}

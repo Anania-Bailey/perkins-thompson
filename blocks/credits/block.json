@@ -1,0 +1,15 @@
+{
+	"name": "ab/creds",
+	"title": "Site Credits",
+	"description": "",
+	"style": [],
+	"script": [],
+	"category": "theme",
+	"icon": "embed-generic",
+	"apiVersion": 2,
+	"keywords": ["custom", "copyright"],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	}
+}

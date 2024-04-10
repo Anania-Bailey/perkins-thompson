@@ -1,0 +1,34 @@
+html {
+  font-size: 62.5% !important;
+  /* 10px browser default */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.editor-styles-wrapper {
+
+  a,
+  a:before,
+  a:after,
+  button,
+  input:focus,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  textarea:focus,
+  .button,
+  .wp-element-button,
+  .wp-block-button__link {
+    transition: all 0.3s ease-in-out;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+  }
+
+  
+}
