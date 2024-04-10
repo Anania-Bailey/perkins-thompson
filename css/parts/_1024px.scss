@@ -63,7 +63,7 @@
                width: 100%;
                max-width: 0px;
                height: 2px;
-               background: var(--wp--preset--color--color-2);
+               background: var(--wp--preset--color--pt-blue);
                transition: all .3s ease-in-out;
             }
 
@@ -91,13 +91,13 @@
                svg {
                   width: 10px;
                   height: 6px;
-                  fill: var(--wp--preset--color--color-2);
+                  fill: var(--wp--preset--color--pt-blue);
                   transition: all .3s ease-in-out;
                }
                
                &:hover svg,
                &:focus svg {
-                  fill: var(--wp--preset--color--color-4);
+                  fill: var(--wp--preset--color--pt-teal);
                }
                
             }

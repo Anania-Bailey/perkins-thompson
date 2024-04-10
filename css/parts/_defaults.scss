@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	background: var(--wp--preset--color--color-2);
+	background: var(--wp--preset--color--pt-blue);
 }
 
 a,
@@ -126,8 +126,8 @@ textarea,
 	display: block;
 	width: 100%;
 	background-color: var(--wp--preset--color--white);
-	border: 2px solid var(--wp--preset--color--color-3);
-	color: var(--wp--preset--color--color-2) !important;
+	border: 2px solid var(--wp--preset--color--pt-alt-blue);
+	color: var(--wp--preset--color--pt-blue) !important;
 	padding: 5px !important;
 	font-size: var(--wp--preset--font-size--medium) !important;
 	border-radius: 0;
@@ -136,7 +136,7 @@ textarea,
 	&:hover,
 	&:focus,
 	&:active {
-		border-color: var(--wp--preset--color--color-4);
+		border-color: var(--wp--preset--color--pt-teal);
 	}
 }
 
@@ -162,16 +162,16 @@ input[type="radio"] {
 }
 
 ::-moz-placeholder {
-	color: var(--wp--preset--color--color-2);
+	color: var(--wp--preset--color--pt-blue);
 	opacity: 1;
 }
 
 ::input-placeholder {
-	color: var(--wp--preset--color--color-2);
+	color: var(--wp--preset--color--pt-blue);
 }
 
 ::placeholder {
-	color: var(--wp--preset--color--color-2);
+	color: var(--wp--preset--color--pt-blue);
 }
 
 button:not(.menu-toggle, .menu-close, .submenu-toggle),
@@ -179,13 +179,13 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: var(--wp--preset--color--color-4);
+	background-color: var(--wp--preset--color--pt-teal);
 	border-radius: 0px;
-	border-color: var(--wp--preset--color--color-4);
+	border-color: var(--wp--preset--color--pt-teal);
 	border-width: 2px;
 	border-style: solid;
 	color: var(--wp--preset--color--white);
-	font-family: var(--wp--preset--font-family--georgia);
+	font-family: var(--wp--preset--font-family--adobe-caslon-pro);
 	font-size: var(--wp--preset--font-size--large);
 	font-weight: 700;
 	line-height: 1;
@@ -195,8 +195,8 @@ input[type="submit"],
 
 	&:hover,
 	&:focus {
-		background-color: var(--wp--preset--color--color-2);
-		border-color: var(--wp--preset--color--color-2);
+		background-color: var(--wp--preset--color--pt-blue);
+		border-color: var(--wp--preset--color--pt-blue);
 		color: var(--wp--preset--color--white);
 	}
 }
@@ -318,7 +318,7 @@ p.gform_required_legend {
 	background: var(--wp--preset--color--white);
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
 	clip: auto !important;
-	color: var(--wp--preset--color--color-2);
+	color: var(--wp--preset--color--pt-blue);
 	display: block;
 	font-size: 1em;
 	font-weight: bold;

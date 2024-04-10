@@ -131,7 +131,7 @@ body:not(.fixed-scroll) .site-header {
         width: 8px;
         height: 8px;
         border-radius: 100vw;
-        background: var(--wp--preset--color--color-4);
+        background: var(--wp--preset--color--pt-teal);
       }
     }
   }
@@ -157,7 +157,7 @@ body:not(.fixed-scroll) .site-header {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 950px) {
   .page-template-default .content {
     --wp--style--global--content-size: 100%;
   }
@@ -209,7 +209,7 @@ body:not(.fixed-scroll) .site-header {
     width: 100%;
     height: 2px;
     border-radius: 100vw;
-    background: var(--wp--preset--color--color-4);
+    background: var(--wp--preset--color--pt-teal);
   }
 
   &:after {
@@ -221,7 +221,7 @@ body:not(.fixed-scroll) .site-header {
     width: 100%;
     height: 2px;
     border-radius: 100vw;
-    background: var(--wp--preset--color--color-4);
+    background: var(--wp--preset--color--pt-teal);
   }
 }
 
@@ -241,7 +241,7 @@ body:not(.fixed-scroll) .site-header {
 .comment {
   padding: 10px;
   margin-bottom: var(--wp--preset--spacing--30);
-  border: 2px solid var(--wp--preset--color--ab-color-4);
+  border: 2px solid var(--wp--preset--color--ab-pt-teal);
 
   .comment {
     margin-bottom: 0;
@@ -327,7 +327,7 @@ body:not(.fixed-scroll) .site-header {
     position: relative;
     padding: 8px 10px;
     line-height: 1;
-    color: var(--wp--preset--color--ab-color-1);
+    color: var(--wp--preset--color--ab-pt-dark-blue);
     text-transform: uppercase;
     letter-spacing: .1em;
     font-size: var(--wp--preset--font-size--small);
@@ -370,7 +370,7 @@ body:not(.fixed-scroll) .site-header {
     a:hover,
     a:focus {
       transform: translateX(5px);
-      color: var(--wp--preset--color--color-3);
+      color: var(--wp--preset--color--pt-alt-blue);
     }
   }
 }

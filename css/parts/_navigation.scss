@@ -17,10 +17,10 @@
         display: block;
         position: relative;
         font-size: var(--wp--preset--font-size--large);
-        font-family: var(--wp--preset--font-family--georgia);
+        font-family: var(--wp--preset--font-family--adobe-caslon-pro);
         line-height: 1.2;
         padding: var(--wp--preset--spacing--20);
-        color: var(--wp--preset--color--color-2);
+        color: var(--wp--preset--color--pt-blue);
         font-weight: 400;
         transition: all 0.3s ease-in-out;
         z-index: 2;
@@ -28,7 +28,7 @@
         &:hover,
         &:focus {
             text-decoration: none;
-            color: var(--wp--preset--color--color-4);
+            color: var(--wp--preset--color--pt-teal);
         }
     }
     
@@ -57,7 +57,7 @@
 .menu-toggle,
 .menu-close {
     background: transparent;
-    color: var(--wp--preset--color--color-2);
+    color: var(--wp--preset--color--pt-blue);
     font-size: 0;
     border: 0;
     padding: var(--wp--preset--spacing--20) 0 var(--wp--preset--spacing--20) var(--wp--preset--spacing--20) !important;
@@ -68,7 +68,7 @@
     &:hover,
     &:focus,
     &:active {
-        color: var(--wp--preset--color--color-4) !important;
+        color: var(--wp--preset--color--pt-teal) !important;
     }
 }
 
@@ -81,14 +81,14 @@
 
 .toggle-icon {
     display: block;
-    fill: var(--wp--preset--color--color-2);
+    fill: var(--wp--preset--color--pt-blue);
     height: 25px;
     transition: all 0.3s ease-in-out;
 
     &:hover,
     &:focus {
         transform: scale(1.05);
-        fill: var(--wp--preset--color--color-4);
+        fill: var(--wp--preset--color--pt-teal);
     }
 
 }
@@ -119,7 +119,7 @@
     height: 100%;
     padding: var(--wp--preset--spacing--30) 5%;
     background-color: var(--wp--preset--color--white);
-    color: var(--wp--preset--color--color-1);
+    color: var(--wp--preset--color--pt-dark-blue);
     -webkit-overflow-scrolling: touch;
     transition: all .8s ease-in-out;
     z-index: 50000;
@@ -149,7 +149,7 @@
             &:focus {
                 & + .submenu-toggle .submenu-icon,
                 & + .submenu-toggle svg {
-                    fill: var(--wp--preset--color--color-4) !important;
+                    fill: var(--wp--preset--color--pt-teal) !important;
                 }
             }
         }
@@ -172,7 +172,7 @@
 
             .submenu-icon {
                 height: 10px;
-                fill: var(--wp--preset--color--color-2);
+                fill: var(--wp--preset--color--pt-blue);
                 transform: translateX(-1px);
             }
 
@@ -217,7 +217,7 @@
     transform: rotate(180deg);
 
     svg {
-        fill: var(--wp--preset--color--color-2) !important;
+        fill: var(--wp--preset--color--pt-blue) !important;
     }
 
     &.submenu-toggle {

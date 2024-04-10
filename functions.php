@@ -39,7 +39,7 @@ add_action( 'genesis_before_header', 'anania_html_js_class', 1 );
 // Enqueue Scripts & Styles
 function anania_enqueue_scripts_styles() {
 
-    wp_enqueue_style( 'adobe-fonts', '//use.typekit.net/azo0ddc.css', array(), CHILD_THEME_VERSION );
+    wp_enqueue_style( 'adobe-fonts', '//use.typekit.net/qpn4vfv.css', array(), CHILD_THEME_VERSION );
     wp_enqueue_style( 'anania-css', get_stylesheet_directory_uri() . '/main.css', array(), CHILD_THEME_VERSION );
     wp_enqueue_script( 'anania-scripts', get_stylesheet_directory_uri() . '/js/anania-scripts-min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
     
@@ -53,7 +53,7 @@ function anania_enqueue_scripts_styles() {
 
 // Admin Scripts & Styles
 function anania_enqueue_editor() {
-  wp_enqueue_style( 'adobe-fonts', '//use.typekit.net/azo0ddc.css', array(), CHILD_THEME_VERSION );
+  wp_enqueue_style( 'adobe-fonts', '//use.typekit.net/qpn4vfv.css', array(), CHILD_THEME_VERSION );
     wp_enqueue_style( 'editor-styles', get_stylesheet_directory_uri() . '/editor-style.css', array(), CHILD_THEME_VERSION );
 } add_action( 'enqueue_block_editor_assets', 'anania_enqueue_editor' );
 
