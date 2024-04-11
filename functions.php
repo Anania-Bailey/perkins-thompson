@@ -303,6 +303,11 @@ function anania_register_acf_blocks() {
       'label' => __('Site Footer', 'anania-bailey'),
     ]);
     
+    register_block_style('core/group', [
+      'name' => 'site-credits',
+      'label' => __('Site Credits', 'anania-bailey'),
+    ]);
+    
     register_block_style('core/heading', [
       'name' => 'page-title',
       'label' => __('Page Title', 'anania-bailey'),
@@ -312,6 +317,13 @@ function anania_register_acf_blocks() {
       'name' => 'page-title',
       'label' => __('Page Title', 'anania-bailey'),
     ]);
+    
+    register_block_style('core/column', [
+      'name' => 'footer-end',
+      'label' => __('Footer End', 'anania-bailey'),
+    ]);
+    
+    
     
     // Register Blocks
     register_block_type( __DIR__ . '/blocks/credits' );

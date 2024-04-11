@@ -378,48 +378,88 @@ body:not(.fixed-scroll) .site-header {
 --------------------------------------------- */
 
 .is-style-site-footer {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
   --wp--preset--font-size--small: 1rem;
+  --wp--preset--font-size--medium: clamp(1.2rem, 2vw, 1.6rem);
 
-  img {
-    display: block;
-    max-width: 350px;
-    margin: 0 auto;
+  a:hover,
+  a:focus {
+    text-decoration: none;
   }
 
-  .wp-block-navigation.is-vertical ul {
+  &:first-of-type .wp-block-columns:after {
+    content: '';
     display: block;
-    width: 100%;
-    columns: auto 120px;
-    gap: var(--wp--preset--spacing--30);
+    position: absolute;
+    top: calc(-1 * var(--wp--preset--spacing--40));
+    left: 85%;
+    width: 100vw;
+    height: calc(100% + (2 * var(--wp--preset--spacing--40)));
+    background: var(--wp--preset--color--pt-blue);
+    transform: skew(-20deg);
+    transform-origin: top right;
+    z-index: 0;
+  }
 
-    li {
-      display: block;
-      white-space: nowrap;
+  .wp-block-columns>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .wp-block-columns {
+      flex-wrap: wrap !important;
     }
 
-    a:hover,
-    a:focus {
-      transform: translateX(5px);
-      color: var(--wp--preset--color--pt-alt-blue);
+    .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+      flex-basis: 100% !important;
     }
+
+    .is-content-justification-right {
+      justify-content: left !important;
+    }
+  }
+
+}
+
+.is-style-site-credits {
+  --wp--preset--font-size--small: 1rem;
+
+  &>* {
+    opacity: .8;
+  }
+
+  nav {
+    width: fit-content;
+    margin: 0 auto;
+    
+    @media screen and (min-width: 780px) {
+      margin: 0;
+    }
+  }
+  
+  a:hover,
+  a:focus {
+    color: var(--wp--preset--color--pt-teal) !important;
+    text-decoration: none;
   }
 }
 
 .site-credits {
-  opacity: .8;
-}
+  text-align: center;
 
-@media screen and (max-width: 780px) {
-  .site-credits {
-    text-align: center;
-  }
-
-  .site-credits .dev {
+  .dev {
     display: block;
   }
 
-  .is-style-site-footer .is-content-justification-right {
-    justify-content: center !important;
+  @media screen and (min-width: 780px) {
+    text-align: right;
+
+    .dev {
+      display: inline;
+    }
   }
 }
 
