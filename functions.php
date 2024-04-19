@@ -12,7 +12,7 @@ require_once get_template_directory() . '/lib/init.php';
 // Defines the child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Perkins Thompson' );
 define( 'CHILD_THEME_URL', 'https://ananiabailey.com' );
-define( 'CHILD_THEME_VERSION', '1.0.0' );
+define( 'CHILD_THEME_VERSION', '1.0.1' );
 
 
 /****************************************************************
@@ -144,6 +144,12 @@ function anania_header_wrap() { ?>
   <div class="header-wrap">
 <?php } add_action('genesis_before_header', 'anania_header_wrap');
 
+function anania_home_header() { ?>
+  <div class="home-header-util">
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/ysiol.svg" alt="Your Success is Our Legacy" class="home-header-img">
+  </div>
+<?php } add_action('genesis_after_header', 'anania_home_header', 5);
+
 function anania_header_close() { ?>
   </div>
 <?php } add_action('genesis_after_header', 'anania_header_close', 10);
@@ -158,9 +164,10 @@ function anania_header_close() { ?>
 // Renames primary and secondary navigation menus.
 add_theme_support(
     'genesis-menus', array(
-        'primary'   => __( 'Primary Menu', 'anania-bailey' ),
+        'primary'   => __( 'Info Menu', 'anania-bailey' ),
         'secondary'   => __( 'Practice Area Menu', 'anania-bailey' ),
-        'tertiary' =>__('Mobile Menu', 'anania-bailey')
+        'tertiary' =>__('Mobile Menu 1', 'anania-bailey'),
+        'quaternary' =>__('Mobile Menu 2', 'anania-bailey')
     )
 );
 
@@ -170,7 +177,11 @@ class AB_Desktop_Walker extends Walker_Nav_Menu {
     $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
     
     if ($item->url && $item->url != '#') {
-      $output .= '<a href="' . $item->url . '">';
+      if ($item->target != null) {
+        $output .= '<a href="' . $item->url . '" target="' . $item->target .'">';
+      } else {
+        $output .= '<a href="' . $item->url . '">';
+      }
     } else {
       $output .= '<span class="linkless" tabindex="0">';
     }
@@ -182,15 +193,44 @@ class AB_Desktop_Walker extends Walker_Nav_Menu {
     } else {
       $output .= '</span>';
     }
+    
+    $practice = get_field('practice_area', $item);
+    if ($practice) {
+      $args = array(
+        'post_type' => 'practice-area',
+        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'tax_query' => array( array(
+            'taxonomy' => 'silo',
+            'field'    => 'term_id',
+            'terms'    => $practice
+          ) )
+      );
+      $posts = get_posts($args);
+      if ($posts) {
+        $output .= '<ul class="sub-menu">';
+        foreach ($posts as $post) {
+          $output .= '<li class="menu-item"><a href="' . get_the_permalink($post->ID) . '">' . get_the_title($post->ID) . '</a>';
+        }
+        $output .= '</ul>';
+      }
+    }
   }
 }
 
 // Custom Nav Walker
 class AB_Mobile_Walker extends Walker_Nav_Menu {
   function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
+    $practice = get_field('practice_area', $item);
+    
+    if ($practice) {
+      $item->classes[] = 'menu-item-has-children';
+    }
+    
     $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
 
-    if ($args->walker->has_children) {
+    if ($args->walker->has_children || $practice) {
       $output .= '<span class="menu-item-wrapper">';
     }
     
@@ -208,8 +248,30 @@ class AB_Mobile_Walker extends Walker_Nav_Menu {
       $output .= '</span>';
     }
     
-    if ($args->walker->has_children) {
+    if ($args->walker->has_children || $practice) {
       $output .= '<button class="submenu-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.385 10" class="submenu-icon"><path id="angle-down-shprfc-solid" d="M26.892,124.7l.9-.9,6.385-6.385.906-.906L33.277,114.7l-.9.9-5.483,5.483-5.483-5.479-.9-.906L18.7,116.508l.9.9,6.385,6.385Z" transform="translate(-18.7 -114.7)"/></svg><span class="screen-reader-text">' .  __( 'Toggle Sub-Menu', 'anania-bailey' ). '</span></button></span>';
+    }
+    
+    if ($practice) {
+      $args = array(
+        'post_type' => 'practice-area',
+        'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'tax_query' => array( array(
+            'taxonomy' => 'silo',
+            'field'    => 'term_id',
+            'terms'    => $practice
+          ) )
+      );
+      $posts = get_posts($args);
+      if ($posts) {
+        $output .= '<ul class="sub-menu">';
+        foreach ($posts as $post) {
+          $output .= '<li class="menu-item"><a href="' . get_the_permalink($post->ID) . '">' . get_the_title($post->ID) . '</a>';
+        }
+        $output .= '</ul>';
+      }
     }
   }
 }
@@ -223,7 +285,7 @@ function anania_menu_args( $args ) {
   if( 'primary' == $args['theme_location'] || 'secondary' == $args['theme_location'] ) {
     $args['walker'] = new AB_Desktop_Walker();
   }
-  if( 'tertiary' == $args['theme_location'] ) {
+  if( 'tertiary' == $args['theme_location'] || 'quaternary' == $args['theme_location'] ) {
     $args['walker'] = new AB_Mobile_Walker();
     $args['menu_class'] = 'menu genesis-nav-menu menu-mobile';
   }
@@ -235,10 +297,15 @@ add_filter( 'wp_nav_menu_args', 'anania_menu_args' );
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav' );
 
-function anania_mobile_output() {
+function anania_mobile_1() {
   wp_nav_menu(array('theme_location'=>'tertiary'));
 }
-add_action( 'anania_mobile_menu', 'anania_mobile_output');
+add_action( 'anania_mobile_menu_1', 'anania_mobile_1');
+
+function anania_mobile_2() {
+  wp_nav_menu(array('theme_location'=>'quaternary'));
+}
+add_action( 'anania_mobile_menu_2', 'anania_mobile_2');
 
 // Inset Mobile Menu Button
 function anania_mobile_toggle() { ?>
@@ -249,7 +316,12 @@ function anania_mobile_toggle() { ?>
 function anania_mobile_container() { ?>
     <div class="mobile-nav">
         <button class="menu-close"><svg width="100%" height="100%" viewBox="0 0 389 389" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" class="toggle-icon" aria-hidden="true"> <g transform="matrix(1,0,0,1,-96.4586,-97.8764)"> <g transform="matrix(0.732109,-0.732109,0.700893,0.700893,-38.9589,399.248)"> <rect x="56.846" y="133.829" width="482.925" height="50.443"> </g> <g transform="matrix(-0.732109,-0.732109,-0.700893,0.700893,620.785,399.248)"> <rect x="56.846" y="133.829" width="482.925" height="50.443"/> </g> </g> </svg><?php _e( 'Close Menu', 'anania-bailey' ) ?></button>
-        <?php do_action('anania_mobile_menu'); ?>
+        <div class="menu-panel menu-panel--primary">
+          <?php do_action('anania_mobile_menu_1'); ?>
+        </div>
+        <div class="menu-panel menu-panel--secondary">
+          <?php do_action('anania_mobile_menu_2'); ?>
+        </div>
     </div>
 <?php } add_action('genesis_after', 'anania_mobile_container');
 
@@ -287,6 +359,11 @@ remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
 ****************************************************************/
 
 function anania_register_acf_blocks() {
+  
+  register_block_style('core/cover', [
+    'name' => 'home-header',
+    'label' => __('Home Header', 'anania-bailey'),
+  ]);
   
     register_block_style('core/cover', [
       'name' => 'page-header',

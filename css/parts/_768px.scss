@@ -4,7 +4,8 @@
 @media (min-width: 600px) {
 
     .admin-bar .header-wrap--sticky,
-    .admin-bar.fixed-scroll .header-wrap {
+    .admin-bar.fixed-scroll .header-wrap,
+    .home .header-wrap:not(.header-wrap--sticky) {
         top: var(--wp-admin--admin-bar--height) !important;
     }
 }

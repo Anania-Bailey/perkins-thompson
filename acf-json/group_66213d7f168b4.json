@@ -1,0 +1,50 @@
+{
+    "key": "group_66213d7f168b4",
+    "title": "Menu Options",
+    "fields": [
+        {
+            "key": "field_66213d7f14bc2",
+            "label": "Practice Area",
+            "name": "practice_area",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Used to auto-populate dropdowns.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "silo",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "select",
+            "allow_null": 1,
+            "bidirectional": 0,
+            "multiple": 0,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/secondary"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1713454562
+}

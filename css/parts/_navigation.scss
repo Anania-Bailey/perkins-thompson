@@ -11,7 +11,7 @@
     .linkless {
         display: block;
         position: relative;
-        font-size: var(--wp--preset--font-size--large);
+        font-size: var(--wp--preset--font-size--x-large);
         font-family: var(--wp--preset--font-family--new-hero);
         line-height: 1.2;
         padding: var(--wp--preset--spacing--20);
@@ -31,6 +31,19 @@
     
     .linkless {
         cursor: default;
+    }
+    
+    &.menu-item-has-children {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        
+        .sub-menu {
+            flex: 0 0 100%;
+        }
+        
     }
 
 }
@@ -57,7 +70,6 @@
     color: var(--wp--preset--color--white);
     font-size: 0;
     border: 0;
-    padding: var(--wp--preset--spacing--20) 0 var(--wp--preset--spacing--20) var(--wp--preset--spacing--20) !important;
     cursor: pointer;
     box-shadow: none;
     border-radius: 0 !important;
@@ -74,6 +86,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding: var(--wp--preset--spacing--20) 0 var(--wp--preset--spacing--20) var(--wp--preset--spacing--20) !important;
 }
 
 .toggle-icon {
@@ -101,7 +114,7 @@
 .menu-close {
     position: relative;
     float: right;
-    margin-bottom: var(--wp--preset--spacing--30);
+    padding: var(--wp--preset--spacing--20) !important;
     z-index: 2;
 }
 
@@ -130,7 +143,6 @@
         position: relative;
         display: block;
         clear: both;
-        padding-bottom: var(--wp--preset--spacing--30);
         z-index: 2;
 
         .menu-item-wrapper {
@@ -179,19 +191,21 @@
                 background: transparent !important;
                 
                 .submenu-icon {
-                    fill: var(--wp--preset--color--prfc-light-teal);
+                    fill: var(--wp--preset--color--white);
                 }
             }
         }
 
         .sub-menu {
             display: none;
+            margin-top: calc(-1 * var(--wp--preset--spacing--20));
             background: rgba(0,0,0,.02);
             margin-bottom: var(--wp--preset--spacing--20);
             
             a,
             .linkless {
                 padding: 10px var(--wp--preset--spacing--20);
+                color: var(--wp--preset--color--pt-teal);
             }
         }
 

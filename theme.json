@@ -286,7 +286,9 @@
 					"fontSize": "var(--wp--preset--font-size--medium)",
 					"fontWeight": "600",
 					"lineHeight": "1",
-					"textAlign": "center"
+					"textAlign": "center",
+					"textTransform": "uppercase",
+					"letterSpacing": ".1em"
 				},
 				"color": {
 					"background": "transparent",
@@ -385,16 +387,6 @@
 			"name": "postfooter",
 			"title": "Post Footer",
 			"area": "postfooter"
-		},
-		{
-			"name": "single-event",
-			"title": "Single Event",
-			"area": "single-event"
-		},
-		{
-			"name": "event-header",
-			"title": "Events Header",
-			"area": "event-header"
 		}
 	]
 }
