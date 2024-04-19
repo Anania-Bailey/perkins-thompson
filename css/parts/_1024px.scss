@@ -9,6 +9,10 @@
    /* Header
     --------------------------------------------- */
     
+    .title-area {
+       flex: 0 1 225px;
+    }
+    
    .menu-toggle,
    .mobile-nav {
       display: none;
