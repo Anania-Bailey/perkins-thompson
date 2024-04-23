@@ -20,6 +20,11 @@
 
     /* Body
     --------------------------------------------- */
+    
+    .is-style-slant-right {
+        margin: 0 -10% 0 0 !important;
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
 
 
     /* Footer

@@ -12,7 +12,7 @@ require_once get_template_directory() . '/lib/init.php';
 // Defines the child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Perkins Thompson' );
 define( 'CHILD_THEME_URL', 'https://ananiabailey.com' );
-define( 'CHILD_THEME_VERSION', '1.0.2' );
+define( 'CHILD_THEME_VERSION', '1.0.3' );
 
 
 /****************************************************************
@@ -63,6 +63,9 @@ function anania_footer_junk() { ?>
     <style>
     </style>
   </noscript>
+  <svg class="clip-hidden screen-reader-text" aria-hidden="true">
+    <clipPath id="arrow-clip" clipPathUnits="objectBoundingBox"><path d="M1,0.5 L0.92,0.548 L0.241,0.952 L0.16,1 L0,0.905 L0.08,0.857 L0.679,0.5,0.08,0.143,0,0.095,0.16,0 L0.24,0.048,0.92,0.452"></path></clipPath>
+  </svg>
 <?php } add_action('wp_footer', 'anania_footer_junk');
 
 // Add onclick to Body to fix iPad hover issue
@@ -416,11 +419,24 @@ function anania_register_acf_blocks() {
     ]);
     
     register_block_style('core/column', [
+      'name' => 'slant-right',
+      'label' => __('Slant Right', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/column', [
+      'name' => 'slant-left',
+      'label' => __('Slant Left', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/column', [
       'name' => 'footer-end',
       'label' => __('Footer End', 'anania-bailey'),
     ]);
     
-    
+    register_block_style('core/button', [
+     'name' => 'arrow-link',
+     'label' => __('Arrow Link', 'anania-bailey'),
+    ]);
     
     // Register Blocks
     register_block_type( __DIR__ . '/blocks/credits' );

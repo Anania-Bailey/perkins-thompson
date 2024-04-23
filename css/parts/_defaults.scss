@@ -217,6 +217,42 @@ input[type="submit"],
 	}
 }
 
+.is-style-arrow-link {
+
+	.wp-element-button,
+	.wp-block-button__link{
+		display: flex;
+		gap: 10px;
+		padding: 0 !important;
+		border: none !important;
+		color: var(--wp--preset--color--pt-teal);
+
+		&:after {
+			content: '';
+			display: block;
+			width: 12px;
+			height: 20px;
+			background: var(--wp--preset--color--pt-teal);
+			clip-path: url(#arrow-clip);
+			transform: scale(.9);
+			transition: all .3s ease-in-out;
+		}
+
+		&:hover,
+		&:focus {
+			background: transparent;
+			color: var(--wp--preset--color--pt-blue);
+			transform: translateX(5px);
+			text-decoration: none;
+			box-shadow: none;
+
+			&:after {
+				background: var(--wp--preset--color--pt-blue);
+			}
+		}
+	}
+}
+
 .button {
 	display: inline-block;
 }

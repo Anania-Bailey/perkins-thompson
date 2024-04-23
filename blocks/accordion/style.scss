@@ -42,10 +42,11 @@
 .accordion-content-inner {
   min-height: 0;
   visibility: hidden;
-
+  
   & > *:last-child {
 	margin-bottom: 0;
   }
+
 }
 
 input[type="radio"].pt-radio {
@@ -93,6 +94,6 @@ input[type="radio"].pt-radio {
 	
 	.accordion-content-inner {
 		visibility: visible;
-		padding-top: var(--wp--preset--spacing--20);
+		padding: var(--wp--preset--spacing--20) 0 5px;
 	}
 }

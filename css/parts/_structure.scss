@@ -567,3 +567,41 @@ body:not(.fixed-scroll) .site-header {
 .wp-block-cover .wp-block-cover__inner-container {
   z-index: 3;
 }
+
+.is-style-slant-right {
+  position: relative;
+  margin: 0 -6% !important;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  
+  & > * {
+    position: relative;
+    display: block;
+    z-index: 0;
+  }
+  
+  figure,
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  img {
+    filter: grayscale(1);
+  }
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    opacity: .8;
+    z-index: 1;
+  }
+  
+}
