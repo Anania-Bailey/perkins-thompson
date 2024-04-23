@@ -376,6 +376,21 @@ function anania_register_acf_blocks() {
     ]);
     
     register_block_style('core/group', [
+      'name' => 'accordion-parent',
+      'label' => __('Accordion Parent', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/group', [
+      'name' => 'accordion-intro',
+      'label' => __('Accordion Intro', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/group', [
+      'name' => 'accordion-container',
+      'label' => __('Accordion Container', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/group', [
       'name' => 'site-footer',
       'label' => __('Site Footer', 'anania-bailey'),
     ]);
@@ -396,6 +411,11 @@ function anania_register_acf_blocks() {
     ]);
     
     register_block_style('core/column', [
+      'name' => 'accordion-parent',
+      'label' => __('Accordion Parent', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/column', [
       'name' => 'footer-end',
       'label' => __('Footer End', 'anania-bailey'),
     ]);
@@ -404,6 +424,7 @@ function anania_register_acf_blocks() {
     
     // Register Blocks
     register_block_type( __DIR__ . '/blocks/credits' );
+    register_block_type( __DIR__ . '/blocks/accordion' );
     
 } add_action( 'init', 'anania_register_acf_blocks', 5 );
 

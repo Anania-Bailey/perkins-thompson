@@ -25,6 +25,14 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/acf-json\/group_6627c021be95e.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_6627c021be95e-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/acf-json\/group_66213d7f168b4.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -112,6 +120,49 @@
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
+    },
+    "\/blocks\/accordion\/block.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/blocks\/accordion\/block-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/blocks\/accordion\/render.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/accordion\/render.php",
+      "oF" : 0
+    },
+    "\/blocks\/accordion\/style.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/accordion\/style-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/blocks\/accordion\/style.scss" : {
+      "aP" : 1,
+      "bl" : 1,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/accordion\/style.css",
+      "oF" : 2,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
     },
     "\/blocks\/credits\/block.json" : {
       "ft" : 524288,

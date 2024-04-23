@@ -1,0 +1,19 @@
+{
+	"name": "pt/accordion",
+	"title": "Accordion",
+	"description": "",
+	"style": [ "file:./style.css" ],
+	"script": [],
+	"category": "theme",
+	"icon": "embed-generic",
+	"apiVersion": 2,
+	"keywords": ["custom", "layout", "accordion", "section", "drop down", "expand"],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"supports": {
+		"jsx": true,
+		"align": false
+	}
+}
