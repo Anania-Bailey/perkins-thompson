@@ -41,6 +41,26 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_662927b42b48a",
+            "label": "Open?",
+            "name": "open",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Only one accordion per set can be open at first load.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -61,5 +81,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1713881222
+    "modified": 1713973210
 }

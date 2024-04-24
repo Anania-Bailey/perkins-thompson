@@ -76,6 +76,51 @@ jQuery(function($) {
         }
 
     }
+    
+    function accordionStuff() {
+        
+        if ($(window).width() > 780) {
+        
+            $('.is-style-accordion-parent').each(function() {
+                var introHeight = $(this).find('.is-style-accordion-intro').outerHeight();
+                var collapsedHeight = $(this).find('.is-style-accordion-container').outerHeight() + parseInt($(this).find('.is-style-accordion-container').css('margin-block-start'), 10);
+                var maxChild = 0;
+                var accordions = $(this).find('.pt-accordion');
+                
+                accordions.each(function() {
+                    var childHeight = 0;
+                    
+                    $(this).find('.accordion-content-inner').children().each(function() {
+                        childHeight += $(this).outerHeight();
+                        childHeight += parseInt($(this).css('margin-bottom'), 10);
+                    });
+                    
+                    childHeight += 20;
+                    
+                    if (childHeight > maxChild) {
+                        maxChild = childHeight;
+                    }
+                    
+                });
+                            
+                var maxAccordion = collapsedHeight + maxChild;
+                
+                $(this).find('.is-style-accordion-container').css('min-height', maxAccordion);
+                
+                $(this).find('.pt-accordion:first-of-type').find('input').prop('checked', true);
+                
+                var colHeight = introHeight + maxAccordion;
+                var nextHeight = $(this).next().outerHeight();
+                
+                if (colHeight < nextHeight) {
+                    $(this).next().css('max-height', colHeight);
+                }
+    
+            });
+        
+        }
+        
+    }
 
 
     function mobileToggle() {
@@ -178,6 +223,7 @@ jQuery(function($) {
     $(document).ready(function() {
         mobileToggle();
         stickyHeader();
+        accordionStuff();
     });
 
     var windowWidth = $(window).width();

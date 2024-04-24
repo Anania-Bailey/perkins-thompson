@@ -194,17 +194,17 @@
 						},
 						{
 							"name": "Large",
-							"size": "clamp(2.8rem, 8vw, 7rem)",
+							"size": "clamp(2.8rem, 5vw, 7rem)",
 							"slug": "large"
 						},
 						{
 							"name": "Extra Large",
-							"size": "clamp(4rem, 8vw, 9rem)",
+							"size": "clamp(4rem, 5vw, 9rem)",
 							"slug": "x-large"
 						},
 						{
 							"name": "XX Large",
-							"size": "clamp(6rem, 8vw, 12rem)",
+							"size": "clamp(6rem, 5vw, 12rem)",
 							"slug": "xx-large"
 						}
 					]
