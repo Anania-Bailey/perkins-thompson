@@ -12,7 +12,7 @@ require_once get_template_directory() . '/lib/init.php';
 // Defines the child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Perkins Thompson' );
 define( 'CHILD_THEME_URL', 'https://ananiabailey.com' );
-define( 'CHILD_THEME_VERSION', '1.0.3' );
+define( 'CHILD_THEME_VERSION', '1.0.4' );
 
 
 /****************************************************************
@@ -438,9 +438,16 @@ function anania_register_acf_blocks() {
      'label' => __('Arrow Link', 'anania-bailey'),
     ]);
     
+    register_block_style('core/button', [
+     'name' => 'arrow-link-light',
+     'label' => __('Arrow Link (Light)', 'anania-bailey'),
+    ]);
+    
     // Register Blocks
     register_block_type( __DIR__ . '/blocks/credits' );
     register_block_type( __DIR__ . '/blocks/accordion' );
+    register_block_type( __DIR__ . '/blocks/testimonials' );
+    register_block_type( __DIR__ . '/blocks/people' );
     
 } add_action( 'init', 'anania_register_acf_blocks', 5 );
 
@@ -476,11 +483,13 @@ add_filter('acf/settings/row_index_offset', '__return_zero');
 
 // Add Image Sizes
 add_image_size( 'square', 950, 950, true );
+add_image_size( 'portrait', 600, 900, true );
 
 // Add Custom Sizes to Block Editor Drop Down
 function anania_custom_image_size($sizes){
     $custom_sizes = array(
-      'square' => __( 'Square', 'anania-bailey' )
+      'square' => __( 'Square', 'anania-bailey' ),
+      'portrait' => __( 'Portrait', 'anania-bailey' ),
     );
     return array_merge( $sizes, $custom_sizes );
 }

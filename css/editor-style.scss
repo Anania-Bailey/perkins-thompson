@@ -30,5 +30,112 @@ html {
   h6 {
   }
 
+  .is-style-arrow-link,
+  .is-style-arrow-link-light {
   
+    .wp-element-button,
+    .wp-block-button__link {
+      display: flex;
+      gap: 10px;
+      padding: 0 !important;
+      border: none !important;
+      color: var(--wp--preset--color--pt-teal);
+  
+      &:after {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 20px;
+        background: var(--wp--preset--color--pt-teal);
+        clip-path: url(#arrow-clip);
+        transform: scale(.9);
+        transition: all .3s ease-in-out;
+      }
+  
+      &:hover,
+      &:focus {
+        background: transparent;
+        color: var(--wp--preset--color--pt-blue);
+        transform: translateX(5px);
+        text-decoration: none;
+        box-shadow: none;
+  
+        &:after {
+          background: var(--wp--preset--color--pt-blue);
+        }
+      }
+    }
+  }
+  
+  .is-style-arrow-link-light {
+  
+    .wp-element-button,
+    .wp-block-button__link {
+      color: var(--wp--preset--color--pt-light-teal);
+  
+      &:after {
+        background: var(--wp--preset--color--pt-light-teal);
+      }
+    }
+  
+  }
+  
+  .is-style-slant-right,
+  .is-style-slant-left {
+    position: relative;
+    overflow: hidden;
+    
+    & > * {
+      position: relative;
+      display: block;
+      z-index: 0;
+    }
+    
+    figure,
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    img {
+      filter: grayscale(1);
+    }
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      opacity: .5;
+      z-index: 1;
+    }
+    
+  }
+  
+  .is-style-slant-left {
+    margin: 0 0 0 -10% !important;
+    aspect-ratio: unset;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
+  }
+  
+  .is-style-slant-right {
+    margin: 0 -10% 0 0 !important;
+    aspect-ratio: unset;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  
+  .value ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none;
+    
+    li:before {
+      display: none !important;
+    }
+  }
 }

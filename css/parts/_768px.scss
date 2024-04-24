@@ -26,6 +26,12 @@
         aspect-ratio: unset;
         clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
+    
+    .is-style-slant-left {
+        margin: 0 0 0 -10% !important;
+        aspect-ratio: unset;
+        clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+    }
 
 
     /* Footer

@@ -1,6 +1,6 @@
 {
     "key": "group_66169935183bf",
-    "title": "Attorney Options",
+    "title": "People Options",
     "fields": [
         {
             "key": "field_66169935c7ccc",
@@ -126,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712757448
+    "modified": 1713983934
 }

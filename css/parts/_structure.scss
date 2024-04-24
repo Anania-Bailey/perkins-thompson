@@ -213,7 +213,7 @@ body:not(.fixed-scroll) .site-header {
 
 .content {
 
-  ul:not(.wp-block-post-template, .gform_fields, .wp-block-atbs-tabs .tabs-titles) {
+  ul:not(.wp-block-post-template, .gform_fields, .slick-dots) {
     padding: 0 0 var(--wp--preset--spacing--30) var(--wp--preset--spacing--30);
 
     li {
@@ -568,7 +568,8 @@ body:not(.fixed-scroll) .site-header {
   z-index: 3;
 }
 
-.is-style-slant-right {
+.is-style-slant-right,
+.is-style-slant-left {
   position: relative;
   margin: 0 -6% !important;
   aspect-ratio: 1/1;
@@ -600,8 +601,18 @@ body:not(.fixed-scroll) .site-header {
     width: 100%;
     height: 100%;
     background-color: inherit;
-    opacity: .8;
+    opacity: .5;
     z-index: 1;
   }
   
+}
+
+.value ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+  
+  li:before {
+    display: none !important;
+  }
 }

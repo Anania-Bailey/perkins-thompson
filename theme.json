@@ -17,7 +17,17 @@
 			"defaultDuotone": false,
 			"customGradient": true,
 			"defaultGradients": false,
-			"gradients": [],
+			"gradients": [{
+					"slug": "top-angle",
+					"gradient": "linear-gradient(165deg,#f9fbfd 49.9%,#fff 50%)",
+					"name": "Top Angle"
+				},
+				{
+					"slug": "bottom-angle",
+					"gradient": "linear-gradient(165deg,#fff 49.9%,#f9fbfd 50%)",
+					"name": "Bottom Angle"
+				}
+			],
 			"defaultPalette": true,
 			"link": true,
 			"palette": [{
