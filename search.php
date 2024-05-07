@@ -11,7 +11,7 @@ add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
 function anania_search_body($classes) {
     
-    $classes[] = 'page-template-page_builder';
+    $classes[] = 'page-builder-template';
     
     return $classes;
     

@@ -55,6 +55,11 @@ h4,
 h5,
 h6 {
 	margin-top: 0;
+	--wp--preset--font-size--small: 2.8rem;
+	--wp--preset--font-size--medium: clamp(2.4rem, 6vw, 4rem);
+	--wp--preset--font-size--large: clamp(2.8rem, 5vw, 7rem);
+	--wp--preset--font-size--x-large: clamp(4rem, 5vw, 9rem);
+	--wp--preset--font-size--xx-large: clamp(6rem, 5vw, 12rem);
 	margin-bottom: var(--wp--preset--spacing--30);
 }
 

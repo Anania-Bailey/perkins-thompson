@@ -70,6 +70,26 @@
             "bidirectional_target": [
                 "field_66169b6231fd5"
             ]
+        },
+        {
+            "key": "field_66391050037a9",
+            "label": "Short Description",
+            "name": "short_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Optional. Used on \"Practice Area\" blocks across the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 300,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "wpautop"
         }
     ],
     "location": [
@@ -90,5 +110,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712759191
+    "modified": 1715015820
 }

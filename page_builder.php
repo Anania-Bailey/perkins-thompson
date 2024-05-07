@@ -3,9 +3,17 @@
 /****************************************************************
 
     Template Name: Page Builder
-    Template Post Type: post, page, update, person, practice-area
+    Template Post Type: post, page, update, people, practice-area
 
 ****************************************************************/
+
+function anania_pb_body($classes) {
+    
+    $classes[] = 'page-builder-template';
+    
+    return $classes;
+    
+} add_filter( 'body_class', 'anania_pb_body' );
 
 // Full Width Layout
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );

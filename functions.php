@@ -12,7 +12,7 @@ require_once get_template_directory() . '/lib/init.php';
 // Defines the child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Perkins Thompson' );
 define( 'CHILD_THEME_URL', 'https://ananiabailey.com' );
-define( 'CHILD_THEME_VERSION', '1.0.4' );
+define( 'CHILD_THEME_VERSION', '1.0.6' );
 
 
 /****************************************************************
@@ -147,11 +147,12 @@ function anania_header_wrap() { ?>
   <div class="header-wrap">
 <?php } add_action('genesis_before_header', 'anania_header_wrap');
 
-function anania_home_header() { ?>
+function anania_home_header() {
+  if (is_front_page()): ?>
   <div class="home-header-util">
     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/ysiol.svg" alt="Your Success is Our Legacy" class="home-header-img">
   </div>
-<?php } add_action('genesis_after_header', 'anania_home_header', 5);
+<?php endif; } add_action('genesis_after_header', 'anania_home_header', 5);
 
 function anania_header_close() { ?>
   </div>
@@ -394,6 +395,11 @@ function anania_register_acf_blocks() {
     ]);
     
     register_block_style('core/group', [
+      'name' => 'split-paragraphs',
+      'label' => __('Split Paragraphs', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/group', [
       'name' => 'site-footer',
       'label' => __('Site Footer', 'anania-bailey'),
     ]);
@@ -443,11 +449,23 @@ function anania_register_acf_blocks() {
      'label' => __('Arrow Link (Light)', 'anania-bailey'),
     ]);
     
+    register_block_style('core/columns', [
+     'name' => 'post-columns',
+     'label' => __('Post Columns', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/query', [
+     'name' => 'blog-feed',
+     'label' => __('Blog Feed', 'anania-bailey'),
+    ]);
+    
     // Register Blocks
     register_block_type( __DIR__ . '/blocks/credits' );
     register_block_type( __DIR__ . '/blocks/accordion' );
     register_block_type( __DIR__ . '/blocks/testimonials' );
     register_block_type( __DIR__ . '/blocks/people' );
+    register_block_type( __DIR__ . '/blocks/practice-areas' );
+    register_block_type( __DIR__ . '/blocks/articles' );
     
 } add_action( 'init', 'anania_register_acf_blocks', 5 );
 
@@ -483,7 +501,7 @@ add_filter('acf/settings/row_index_offset', '__return_zero');
 
 // Add Image Sizes
 add_image_size( 'square', 950, 950, true );
-add_image_size( 'portrait', 600, 900, true );
+add_image_size( 'portrait', 600, 800, true );
 
 // Add Custom Sizes to Block Editor Drop Down
 function anania_custom_image_size($sizes){

@@ -49,6 +49,14 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/acf-json\/group_66393e3a10a8b.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_66393e3a10a8b-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/acf-json\/group_661697f66abf3.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -61,6 +69,14 @@
       "ft" : 524288,
       "oA" : 1,
       "oAP" : "\/acf-json\/group_661698d75c2ef-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/acf-json\/group_6639185e01a90.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_6639185e01a90-min.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
@@ -180,6 +196,49 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/blocks\/articles\/block.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/blocks\/articles\/block-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/blocks\/articles\/render.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/articles\/render.php",
+      "oF" : 0
+    },
+    "\/blocks\/articles\/style.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/articles\/style-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/blocks\/articles\/style.scss" : {
+      "aP" : 1,
+      "bl" : 1,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/articles\/style.css",
+      "oF" : 2,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/blocks\/credits\/block.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -234,6 +293,49 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/blocks\/people\/style.css",
+      "oF" : 2,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/blocks\/practice-areas\/block.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/blocks\/practice-areas\/block-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/blocks\/practice-areas\/render.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/practice-areas\/render.php",
+      "oF" : 0
+    },
+    "\/blocks\/practice-areas\/style.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/practice-areas\/style-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/blocks\/practice-areas\/style.scss" : {
+      "aP" : 1,
+      "bl" : 1,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/blocks\/practice-areas\/style.css",
       "oF" : 2,
       "oS" : 3,
       "pg" : 0,

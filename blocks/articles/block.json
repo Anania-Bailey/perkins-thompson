@@ -1,0 +1,16 @@
+{
+	"name": "pt/articles",
+	"title": "Articles",
+	"description": "",
+	"style": [ "file:./style.css" ],
+	"script": [],
+	"category": "theme",
+	"icon": "embed-generic",
+	"apiVersion": 2,
+	"keywords": ["custom", "layout", "practice area", "attorney", "article"],
+	"usesContext": [ "postId", "postType", "queryId" ],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	}
+}
