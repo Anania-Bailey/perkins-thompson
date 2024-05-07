@@ -28,7 +28,7 @@
   overflow: hidden;
 }
 
-.page-template-page_builder .site-inner {
+.page-builder-template .site-inner {
   padding: 0 !important;
 }
 
@@ -49,6 +49,13 @@ body:not(.fixed-scroll) .site-header {
     justify-content: space-between;
   }
 
+}
+
+.page-builder-template .header-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .title-area {
@@ -114,7 +121,7 @@ body:not(.fixed-scroll) .site-header {
 
 .header-wrap--sticky,
 .fixed--scroll .header-wrap {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
@@ -266,7 +273,7 @@ body:not(.fixed-scroll) .site-header {
   margin-bottom: var(--wp--preset--spacing--30);
 }
 
-.single-post:not(.page-template-page_builder) .entry-content>*:not(.alignwide, .alignfull, .alignright, .alignleft),
+.single-post:not(.page-builder-template) .entry-content>*:not(.alignwide, .alignfull, .alignright, .alignleft),
 .single-post .entry-header,
 .single-post .entry-footer,
 .single-post .comment-respond {
@@ -535,7 +542,7 @@ body:not(.fixed-scroll) .site-header {
 /* Builder
 --------------------------------------------- */
 
-.page-template-page_builder:not(.content-sidebar, .sidebar-content) {
+.page-builder-template:not(.content-sidebar, .sidebar-content) {
 
   .site-inner,
   .content,
@@ -614,5 +621,47 @@ body:not(.fixed-scroll) .site-header {
   
   li:before {
     display: none !important;
+  }
+}
+
+.is-style-post-columns {
+  --wp--preset--font-size--small: clamp(1rem, 3vw, 1.2rem);
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0,0,0,.05);
+  
+  &:hover,
+  &:focus-within {
+    transform: scale(1.02);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  }
+  
+  .wp-block-column {
+    overflow: hidden;
+  }
+  
+  figure,
+  img {
+    height: 100%;
+    object-fit: cover;
+  }   
+}
+
+.is-style-page-title {
+  text-shadow: 0px 5px 10px rgba(0,0,0,.2);
+}
+
+.is-style-split-paragraphs {
+  columns: 400px 2;
+  column-gap: var(--wp--preset--spacing--60);
+}
+
+.is-style-blog-feed {
+  .wp-block-post-template {
+    display: grid;
+    gap: var(--wp--preset--spacing--40);
+    @media screen and (min-width:780px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
