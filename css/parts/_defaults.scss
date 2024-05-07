@@ -169,10 +169,10 @@ textarea,
 
 select {
 	appearance: none;
-	background-image: url('images/arrow.svg');
+	background-image: url('images/arrow-down.svg');
 	background-repeat: no-repeat;
-	background-size: 8px auto;
-	background-position: calc(100% - 10px);
+	background-size: 12px auto;
+	background-position: calc(100% - 15px);
 }
 
 input[type="text"],
@@ -206,24 +206,26 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: var(--wp--preset--color--pt-teal);
+	background-color: transparent;
 	border-radius: 0px;
-	border-color: var(--wp--preset--color--pt-teal);
+	border-color: var(--wp--preset--color--pt-alt-blue);
 	border-width: 2px;
 	border-style: solid;
-	color: var(--wp--preset--color--white);
-	font-family: var(--wp--preset--font-family--adobe-caslon-pro);
-	font-size: var(--wp--preset--font-size--large);
-	font-weight: 700;
+	color: var(--wp--preset--color--pt-alt-blue);
+	font-family: var(--wp--preset--font-family--new-hero);
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 600;
+	letter-spacing: .1em;
 	line-height: 1;
 	padding: 10px var(--wp--preset--spacing--30);
 	text-decoration: none;
+	text-transform: uppercase;
 	cursor: pointer;
 
 	&:hover,
 	&:focus {
-		background-color: var(--wp--preset--color--pt-blue);
-		border-color: var(--wp--preset--color--pt-blue);
+		background-color: var(--wp--preset--color--pt-teal);
+		border-color: var(--wp--preset--color--pt-teal);
 		color: var(--wp--preset--color--white);
 	}
 }

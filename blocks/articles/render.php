@@ -29,7 +29,7 @@ if (get_post_type($post_id) == 'people') {
 	);
 } 
 
-if (get_post_type($post_id) == 'practice-areas') {
+if (get_post_type($post_id) == 'practice-area') {
 	$args['meta_query'][] = array(
 			'key' => 'practice_areas',
 			'value' => '"' . $post_id . '"',
@@ -61,8 +61,8 @@ if (get_field('practice_areas')) {
 $articles = new WP_QUERY($args);
 
 if ($articles->have_posts()): ?>
-	
-	<div<?php echo $anchor;?> class="<?php echo $className; ?>">
+
+<div<?php echo $anchor;?> class="<?php echo $className; ?>">
 	<?php while ($articles->have_posts()): $articles->the_post(); ?>
 	<div class="pt-article">
 		<div class="pt-article-img">
@@ -71,8 +71,8 @@ if ($articles->have_posts()): ?>
 					endif; ?>
 		</div>
 		<div class="pt-article-desc">
-			
-				<h3 class="pt-article-title"><a href="<?php the_permalink(); ?>" class="pt-article-link"><?php the_title(); ?></a></h3>
+
+			<h3 class="pt-article-title"><a href="<?php the_permalink(); ?>" class="pt-article-link"><?php the_title(); ?></a></h3>
 			<div class="pt-article-meta">
 				<div class="pt-article-date">
 					<div class="wp-block-outermost-icon-block">
@@ -86,9 +86,13 @@ if ($articles->have_posts()): ?>
 				</div>
 				<?php if (get_field('attorneys', get_the_ID()) && get_post_type($post_id) != 'people'):?>
 				<div class="pt-article-author">
-					<div class="wp-block-outermost-icon-block"><div class="icon-container has-icon-color has-pt-gray-color" style="color:#A7ADAF;width:15px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-label="Author"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"></path></svg></div></div>
+					<div class="wp-block-outermost-icon-block">
+						<div class="icon-container has-icon-color has-pt-gray-color" style="color:#A7ADAF;width:15px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-label="Author">
+								<path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"></path>
+							</svg></div>
+					</div>
 					<?php foreach(get_field('attorneys', get_the_ID()) as $attorney):?>
-						<a href="<?php echo get_the_permalink($attorney);?>"><?php echo get_the_title($attorney);?></a>
+					<a href="<?php echo get_the_permalink($attorney);?>"><?php echo get_the_title($attorney);?></a>
 					<?php endforeach; ?>
 				</div>
 				<?php endif; ?>
@@ -98,4 +102,16 @@ if ($articles->have_posts()): ?>
 	<?php endwhile; ?>
 	</div>
 
-<?php endif;  wp_reset_query(); ?>
+	<?php endif;  wp_reset_query(); ?>
+
+	<?php if (get_post_type($post_id) == 'practice-area'):?>
+	<div class="link-wrap alignwide">
+		<div class="wp-block-button is-style-arrow-link-light"><a class="wp-block-button__link wp-element-button" href="<?php echo get_post_type_archive_link('post');?>?_practice_areas=<?php echo $post_id;?>">More Articles</a></div>
+	</div>
+	<?php endif; ?>
+	
+	<?php if (get_post_type($post_id) == 'people'):?>
+	<div class="link-wrap alignwide">
+		<div class="wp-block-button is-style-arrow-link-light"><a class="wp-block-button__link wp-element-button" href="<?php echo get_post_type_archive_link('post');?>?_attorneys=<?php echo $post_id;?>">More Articles</a></div>
+	</div>
+	<?php endif; ?>

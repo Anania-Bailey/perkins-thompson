@@ -51,7 +51,7 @@ body:not(.fixed-scroll) .site-header {
 
 }
 
-.page-builder-template .header-wrap {
+.page-builder-template:not(.single-people) .header-wrap {
   position: absolute;
   top: 0;
   left: 0;
@@ -662,6 +662,32 @@ body:not(.fixed-scroll) .site-header {
     gap: var(--wp--preset--spacing--40);
     @media screen and (min-width:780px) {
       grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.blog-sort {
+  .facetwp-facet {
+    margin: 0;
+  }
+  
+  select {
+    background-color: transparent;
+    border: none;
+    font-size: var(--wp--preset--font-size--small) !important;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 600;
+    padding: 5px 30px 5px 5px !important;
+    color: var(--wp--preset--color--white) !important;
+    
+    &:hover,
+    &:focus {
+      background-color: rgba(255,255,255,.1);
+    }
+    
+    option {
+      color: var(--wp--preset--color--pt-dark-blue);
     }
   }
 }

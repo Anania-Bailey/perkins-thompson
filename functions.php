@@ -12,7 +12,7 @@ require_once get_template_directory() . '/lib/init.php';
 // Defines the child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Perkins Thompson' );
 define( 'CHILD_THEME_URL', 'https://ananiabailey.com' );
-define( 'CHILD_THEME_VERSION', '1.0.6' );
+define( 'CHILD_THEME_VERSION', '1.0.7' );
 
 
 /****************************************************************
@@ -395,6 +395,11 @@ function anania_register_acf_blocks() {
     ]);
     
     register_block_style('core/group', [
+      'name' => 'bio-header',
+      'label' => __('Bio Header', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/group', [
       'name' => 'split-paragraphs',
       'label' => __('Split Paragraphs', 'anania-bailey'),
     ]);
@@ -483,6 +488,22 @@ function acf_should_wrap_innerblocks( $wrap, $name ) {
 function anania_remove_patterns() {
     remove_theme_support('core-block-patterns');
 } add_action('after_setup_theme', 'anania_remove_patterns');
+
+add_filter( 'meta_field_block_get_block_content', function ( $block_content, $attributes, $block, $object_id, $object_type ) {
+  $field_name = $attributes['fieldName'] ?? '';
+
+  // Replace your_field_name with your unique name.
+  if ( 'email_address' === $field_name ) {
+    $block_content = '<a href="mailto:' . $block_content . '">' . $block_content . '</a>';
+  }
+  
+  if ( 'phone_number' === $field_name ) {
+    $stripped = preg_replace('/[^a-zA-Z0-9]+/','', $block_content);
+    $block_content = '<a href="tel:+1' . $stripped . '">' . $block_content . '</a>';
+  }
+
+  return $block_content;
+}, 10, 5);
 
 /****************************************************************
 
@@ -573,3 +594,7 @@ function anania_comments_gravatar( $args ) {
 
 /** Remove the edit link */
 add_filter ( 'genesis_edit_post_link' , '__return_false' );
+
+add_filter('render_block_core/shortcode', function(string $block_content): string {
+return do_shortcode($block_content);
+});
