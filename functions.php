@@ -12,7 +12,7 @@ require_once get_template_directory() . '/lib/init.php';
 // Defines the child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Perkins Thompson' );
 define( 'CHILD_THEME_URL', 'https://ananiabailey.com' );
-define( 'CHILD_THEME_VERSION', '1.0.7' );
+define( 'CHILD_THEME_VERSION', '1.0.8' );
 
 
 /****************************************************************
@@ -462,6 +462,11 @@ function anania_register_acf_blocks() {
     register_block_style('core/query', [
      'name' => 'blog-feed',
      'label' => __('Blog Feed', 'anania-bailey'),
+    ]);
+    
+    register_block_style('core/image', [
+     'name' => 'cut-corners',
+     'label' => __('Cut Corners', 'anania-bailey'),
     ]);
     
     // Register Blocks

@@ -1,6 +1,13 @@
 /* Defaults
 ---------------------------------------------------------------------------------------------------- */
 
+@media (prefers-contrast: more) {
+  body {
+	  --wp--preset--color--pt-teal: #00a6a6;
+	  --wp--preset--color--pt-gray: #909699;
+  }
+}
+
 /* Typographical Elements
 --------------------------------------------- */
 
