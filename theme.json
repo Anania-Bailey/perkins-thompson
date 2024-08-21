@@ -152,7 +152,7 @@
 				},
 				{
 					"name": "Medium",
-					"size": "clamp(1.8rem, 3vw, 2rem)",
+					"size": "clamp(1.6rem, 3vw, 1.8rem)",
 					"slug": "medium"
 				},
 				{
@@ -264,7 +264,7 @@
 			"link": {
 				"border": {},
 				"color": {
-					"text": "var(--wp--preset--color--pt-light-blue)"
+					"text": "var(--wp--preset--color--pt-blue)"
 				},
 				"spacing": {},
 				"typography": {

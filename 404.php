@@ -5,21 +5,21 @@
 // Full Width Layout
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
-function anania_404_body($classes) {
+function brassbound_404_body($classes) {
 	
 	$classes[] = 'page-builder-template';
 	
 	return $classes;
 	
-} add_filter( 'body_class', 'anania_404_body' );
+} add_filter( 'body_class', 'brassbound_404_body' );
 
-function anania_404() {
+function brassbound_404() {
 	block_template_part( '404' );
 }
 
 // Replace Default Content
 remove_action( 'genesis_loop', 'genesis_do_loop' );
-add_action('genesis_loop', 'anania_404');
+add_action('genesis_loop', 'brassbound_404');
 
 
 genesis();

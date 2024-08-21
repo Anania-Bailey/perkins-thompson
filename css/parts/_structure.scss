@@ -629,6 +629,7 @@ body:not(.fixed-scroll) .site-header {
   transition: all .3s ease-in-out;
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0,0,0,.05);
+  height: 100%;
   
   &:hover,
   &:focus-within {
@@ -645,6 +646,28 @@ body:not(.fixed-scroll) .site-header {
     height: 100%;
     object-fit: cover;
   }   
+  
+  .is-acf-field ul {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .is-acf-field ul li{
+      display: flex;
+  }
+  
+  .is-acf-field ul li:not(:last-of-type):after {
+      content: ', ' !important;
+      display: block !important;
+      position: relative !important;
+      top: unset;
+      right: unset;
+      background: unset;
+      width: fit-content;
+      height: unset;
+      margin-right: 5px;
+  }
+
 }
 
 .is-style-page-title {
@@ -696,5 +719,11 @@ body:not(.fixed-scroll) .site-header {
   filter: drop-shadow(0 5px 10px rgba(0,0,0,.1));
   img {
     clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .is-style-toc-columns {
+    flex-direction: column-reverse;
   }
 }

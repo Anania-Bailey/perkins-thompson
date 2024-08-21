@@ -1,9 +1,21 @@
 <?php
 
+/****************************************************************
 
-function brassbound_page_hero() {
-	block_template_part( 'postheader' );
-} add_action('genesis_after_header', 'brassbound_page_hero');
+	Single Person
+
+****************************************************************/
+
+function brassbound_people_body($classes) {
+	
+	$classes[] = 'page-builder-template';
+	
+	return $classes;
+	
+} add_filter( 'body_class', 'brassbound_people_body' );
+
+// Full Width Layout
+add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
 // Remove Entry Header
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
@@ -15,6 +27,5 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 )
 remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
-
 
 genesis();

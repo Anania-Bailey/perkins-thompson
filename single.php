@@ -1,13 +1,20 @@
 <?php
 
+function brassbound_post_body($classes) {
+	
+	$classes[] = 'page-builder-template';
+	
+	return $classes;
+	
+} add_filter( 'body_class', 'brassbound_post_body' );
 
-function anania_post_hero() {
+function brassbound_post_hero() {
 	block_template_part( 'postheader' );
-} add_action('genesis_after_header', 'anania_post_hero');
+} add_action('genesis_after_header', 'brassbound_post_hero');
 
-function anania_post_footer() {
+function brassbound_post_footer() {
 	block_template_part( 'postfooter' );
-} add_action('genesis_before_footer', 'anania_post_footer', 5);
+} add_action('genesis_before_footer', 'brassbound_post_footer', 5);
 
 // Remove Entry Header
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );

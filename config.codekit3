@@ -7,7 +7,7 @@
       "uuidString" : "11DDEF18-1AAD-411A-8951-724F070B62AD"
     }
   ],
-  "creatorBuild" : "34564",
+  "creatorBuild" : "34576",
   "files" : {
     "\/404.php" : {
       "cB" : 0,
@@ -731,6 +731,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/search.php",
+      "oF" : 0
+    },
+    "\/single-people.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/single-people.php",
       "oF" : 0
     },
     "\/single.php" : {

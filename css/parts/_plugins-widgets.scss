@@ -137,3 +137,23 @@
 .gform_wrapper.gravity-theme .gfield_required {
 	color: var(--wp--preset--color--pt-teal) !important;
 }
+
+.facetwp-facet.facetwp-facet-pagination.facetwp-type-pager {
+	margin: var(--wp--preset--spacing--40) auto 0;
+	
+	.facetwp-pager{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		a {
+			color: var(--wp--preset--color--pt-blue);
+			
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				color: var(--wp--preset--color--pt-teal);
+			}
+		}
+	}
+}

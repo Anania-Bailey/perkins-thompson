@@ -7,13 +7,13 @@
 
 ****************************************************************/
 
-function anania_pb_body($classes) {
+function brassbound_pb_body($classes) {
     
     $classes[] = 'page-builder-template';
     
     return $classes;
     
-} add_filter( 'body_class', 'anania_pb_body' );
+} add_filter( 'body_class', 'brassbound_pb_body' );
 
 // Full Width Layout
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
