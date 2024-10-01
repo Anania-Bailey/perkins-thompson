@@ -29,9 +29,7 @@
             "return_format": "id",
             "min": "",
             "max": "",
-            "elements": [
-                "featured_image"
-            ],
+            "elements": "",
             "bidirectional": 1,
             "bidirectional_target": [
                 "field_661699b5c7ccd"
@@ -58,9 +56,7 @@
             "post_status": "",
             "taxonomy": "",
             "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
+                "search"
             ],
             "return_format": "id",
             "min": "",
@@ -110,5 +106,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719505246
+    "modified": 1724777359
 }

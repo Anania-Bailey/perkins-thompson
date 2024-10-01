@@ -81,7 +81,7 @@ if ($articles->have_posts()): ?>
 							</svg></div>
 					</div>
 					<time datetime="<?php echo get_the_date('Y-m-d H:i:s');?>">
-						<?php echo get_the_date('F j');?>
+						<?php echo get_the_date('F j, Y');?>
 					</time>
 				</div>
 				<?php if (get_field('attorneys', get_the_ID()) && get_post_type($post_id) != 'people'):?>

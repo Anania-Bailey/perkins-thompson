@@ -1,6 +1,7 @@
 .pt-articles {
 	display: grid !important;
 	gap: var(--wp--preset--spacing--40);
+	margin-top: var(--wp--preset--spacing--30) !important;
 	
 	@media screen and (min-width:780px) {
 		grid-template-columns: 1fr 1fr;

@@ -3,6 +3,10 @@
 $post_id = $context['postId'];
 $className = 'pt-attorneys';
 
+if (get_field('columns')) {
+	$className .= ' pt-attorneys--' . get_field('columns');
+}
+
 if( !empty($block['className']) ) {
 	$className .= ' ' . $block['className'];
 }
@@ -64,12 +68,20 @@ if (get_field('sort') == 'firstname') {
 
 $people = new WP_QUERY($args);
 
+if ($people->found_posts > 3) {
+	if (get_field('columns') == 3) {
+		str_replace('pt-attorneys--3', 'pt-attorneys--4', $className);
+	} else {
+		$className .= ' pt-attorneys--4';
+	}
+}
+
 if ($people->have_posts()): ?>
 	
 	<div<?php echo $anchor;?> class="<?php echo $className; ?>">
 		<?php while ($people->have_posts()): $people->the_post(); ?>
 			<a href="<?php the_permalink(); ?>" class="pt-person">
-				<?php the_post_thumbnail('portrait', array('class'=>'pt-portrait')); ?>
+				<?php the_post_thumbnail('portrait', array('class'=>'pt-portrait', 'aria-hidden'=>'true')); ?>
 				<div class="pt-person-overlay">
 					<span class="pt-person-name"><?php the_title(); ?></span>
 				</div>

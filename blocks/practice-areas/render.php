@@ -20,7 +20,8 @@ $args = array(
 	'post_type' => 'practice-area',
 	'posts_per_page' => -1,
 	'orderby' => 'title',
-	'order' => 'ASC'
+	'order' => 'ASC',
+	'post_status' => 'publish'
   );
 
 if (get_post_type($post_id) == 'people') {

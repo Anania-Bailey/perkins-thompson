@@ -117,4 +117,36 @@ html {
       display: none !important;
     }
   }
+  
+  .simpletoc-list {
+    list-style: none;
+    
+    li {
+      margin: 10px 0;
+      
+      &:before {
+        display: none !important;
+      }
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0 0 0 var(--wp--preset--spacing--20) !important;
+      border-left: 2px solid var(--wp--preset--color--pt-light-teal);
+      transform: translateX(2px);
+    }
+    
+    a {
+      display: block;
+      
+      &:hover,
+      &:focus {
+        transform: translateX(5px);
+      }
+    }
+  }
+  
+  h2.simpletoc-title {
+    font-size: var(--wp--preset--font-size--small);
+  }
 }

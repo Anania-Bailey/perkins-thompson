@@ -12,7 +12,7 @@ require_once get_template_directory() . '/lib/init.php';
 // Defines the child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Perkins Thompson' );
 define( 'CHILD_THEME_URL', 'https://brassbound.com' );
-define( 'CHILD_THEME_VERSION', '1.1.3' );
+define( 'CHILD_THEME_VERSION', '1.1.9' );
 
 
 /****************************************************************
@@ -405,6 +405,16 @@ function brassbound_register_acf_blocks() {
     ]);
     
     register_block_style('core/group', [
+      'name' => 'sticky-box',
+      'label' => __('Sticky Box', 'brassbound'),
+    ]);
+    
+    register_block_style('core/group', [
+      'name' => 'resize-box',
+      'label' => __('Resize Box', 'brassbound'),
+    ]);
+    
+    register_block_style('core/group', [
       'name' => 'site-footer',
       'label' => __('Site Footer', 'brassbound'),
     ]);
@@ -499,12 +509,21 @@ function brassbound_remove_patterns() {
     remove_theme_support('core-block-patterns');
 } add_action('after_setup_theme', 'brassbound_remove_patterns');
 
+// Obfuscate Email
+function hide_email($email) {
+  $output = null;
+  for ($i = 0; $i < (strlen($email)); $i++) {
+   $output .= '&#' . ord($email[$i]) . ';';
+  }
+  return $output;
+}
+
 add_filter( 'meta_field_block_get_block_content', function ( $block_content, $attributes, $block, $object_id, $object_type ) {
   $field_name = $attributes['fieldName'] ?? '';
 
   // Replace your_field_name with your unique name.
   if ( 'email_address' === $field_name ) {
-    $block_content = '<a href="mailto:' . $block_content . '">' . $block_content . '</a>';
+    $block_content = '<a href="mailto:' . hide_email($block_content) . '" class="elink">' . hide_email($block_content) . '</a>';
   }
   
   if ( 'phone_number' === $field_name ) {

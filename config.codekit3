@@ -741,6 +741,14 @@
       "oAP" : "\/single-people.php",
       "oF" : 0
     },
+    "\/single-practice-area.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/single-practice-area.php",
+      "oF" : 0
+    },
     "\/single.php" : {
       "cB" : 0,
       "ft" : 8192,
